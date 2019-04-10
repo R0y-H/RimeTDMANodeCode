@@ -101,7 +101,10 @@ void rtc_Init(void)
     RTC_DeInit();
 
     /* Set RTC to a specific value */
-    //设置RTC的计数频率为1Hz（32768/32/1024=1s)
+    /*
+     *设置RTC的计数频率为1Hz（32768/(32*1024)=1s
+     *计算公式参考STM8L151C8参考手册P426
+    */
     l_stInit.RTC_HourFormat = RTC_HourFormat_24;
     l_stInit.RTC_AsynchPrediv = ASYNCH_PREDIV; 
     l_stInit.RTC_SynchPrediv = SYNCH_PREDIV;

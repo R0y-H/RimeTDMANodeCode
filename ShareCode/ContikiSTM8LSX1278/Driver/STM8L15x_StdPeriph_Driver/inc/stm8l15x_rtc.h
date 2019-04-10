@@ -389,10 +389,10 @@ typedef struct
   RTC_HourFormat_TypeDef RTC_HourFormat; /*!< RTC Hour Format */
 
   uint8_t RTC_AsynchPrediv;   /*!< RTC Asynchronious Predivisor.
-                                   This parameter can be any value from 0x00 to 0x7F.*/
+                                   This parameter can be any value from 0x00 to 0x7F(127).*/
 
   uint16_t RTC_SynchPrediv;   /*!< RTC Synchronious Predivisor.
-                                   This parameter can be any value from 0x0000 to 0x7FFF.*/
+                                   This parameter can be any value from 0x0000 to 0x7FFF(32767).*/
 }
 RTC_InitTypeDef;
 

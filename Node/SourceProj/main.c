@@ -105,7 +105,7 @@ void main(void)
     */
     ss_Init();
     /*
-    RTC初始化，设置LSE(32.768KHz)为其时钟源,32768分频，因此计数频率为1Hz
+     *RTC初始化，设置LSE(32.768KHz)为其时钟源,32768分频，因此计数频率为1Hz
     */
     rtc_Init();
     /*
@@ -121,10 +121,11 @@ void main(void)
     HAL_ENABLE_INTERRUPTS();
 
     /* Initialize components */
+    //设置默认值，即让所有进程反对休眠CPU
     pm_Init();
 	
     /* Initialize contiki system */	
-    energest_init();
+    energest_init();  //能量评估初始化，默认是关掉能量消耗评估的
     process_init();
     process_start(&etimer_process, NULL);
 
