@@ -272,7 +272,7 @@ INT16S util_GetRoomCBuf(INT16S nHead, INT16S nTail, INT16S nTotNum)
 
 /*
 ************************************************************************************************
-*                                                                       Calculate Check Sum  
+*                                     Calculate Check Sum  
 * Description: Calculate check sum of a specified frame of data  
 * Arguments : const INT8U *p_byBuf    point to original data by this pointer
 *                   INT32S lSize    size of this frame of data

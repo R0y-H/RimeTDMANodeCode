@@ -446,6 +446,9 @@ static int8_t ProcessUartFrame(void)
     LOCK_COMM_2_TRM_BUF(); /* Exclude ISR of UART */
 
     /* Check whether the CS is valid */
+    /*结构体s_stComm2TrmData保存接收到的数据帧相关信息（即数据帧缓存）
+     *其成员s_stComm2TrmData.a_byRxBuf保存接收到的用户系统发来的数据帧
+     */
     byHeadDataSize = s_stComm2TrmData.byDataLen + sizeof(COMM_FRAME_HEAD);
     byCS = util_CalcCS(&s_stComm2TrmData.a_byRxBuf[0], byHeadDataSize);
     if (byCS != s_stComm2TrmData.a_byRxBuf[byHeadDataSize])
